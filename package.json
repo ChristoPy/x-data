@@ -1,7 +1,7 @@
 {
   "name": "@christopy/x-data",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "author": "Christopher Ribeiro <christo_campiglia@hotmail.com>",
   "description": "A simple reactivity layer for the web",
