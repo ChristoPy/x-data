@@ -1,14 +1,14 @@
-import XData, { Store } from "./main"
+import XData from "./main"
 
-interface User extends Store {
+interface User {
   name: string;
   age: string;
 }
 
-const user = XData({
+const user = XData<User>({
   name: 'John',
   age: '30',
-}) as User;
+});
 const listener = (value: string) => {
   console.log(value)
 }

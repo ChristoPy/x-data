@@ -6,7 +6,7 @@ export interface Store {
   unsubscribe: (callback: CallbackFunction) => void;
 }
 
-export default function XData(target: any) {
+export default function XData<T>(target: any): T & Store {
   const listeners: Record<string, CallbackFunction[]> = {}
 
   const store = {
@@ -30,7 +30,7 @@ export default function XData(target: any) {
     }
   }
 
-  return new Proxy<Store>(store, {
+  return new Proxy<T & Store>(store, {
     set: function (target: Store, property: string, value: any) {
       if (property === 'subscribe' || property === 'unsubscribe') {
         return false
